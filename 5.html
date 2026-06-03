@@ -1,0 +1,74 @@
+<!-- Program 5: Design a web page for a Supermarket Inventory Management System using HTML and CSS to demonstrate the application of CSS Pseudo-Class Selectors -->
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory Management System</title>
+    <style>
+        h2 {
+            background-color: darkblue;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            border-radius: 5px;
+        }
+        p  {
+            background-color: white;
+            padding: 15px;
+            border: 1px solid gray;
+            line-height: 25px;
+        }
+
+        p b:first-of-type {
+            color: green;
+        }
+        p  b:nth-of-type(2){
+            font-size: 26px;
+            color: darkorange;
+        }
+        p b:last-of-type{
+            color: red;
+        }
+
+        ul {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid gray;
+        }
+        ul li:nth-child(odd) {
+            color: blue;
+        }
+
+        ul li:nth-child(even){
+            color: brown;
+        }
+    </style>
+  </head>
+  <body>
+    <h2>Inventory Management</h2>
+    <p>
+      The Supermarket inventory department manages the stock and availability of
+      products on a daily basis.
+      <b>laptop Bags</b>
+      are currently in high demand due to increased customer purchases.
+      Different electronic accessories and household products are arranged
+      systematically for easier tracking and billing.
+      <b>Wireless Headphones</b>
+      are among the premium products available in the store this week.The store
+      also maintains separate sections for packaged foods,stationary items, and
+      bevarages.
+      <b>Energy Drinks</b>
+      have limited stock availability and require immediate restocking.
+    </p>
+
+    <h3>Available Products</h3>
+    <ul>
+        <li>Laptop Bags</li>
+        <li>Wireless Mouse</li>
+        <li>Bluetooth Speakers</li>
+        <li>Office Stationary</li>
+        <li>Wireless Headphones</li>
+        <li>Energy drinks</li>
+    </ul>
+  </body>
+</html>
