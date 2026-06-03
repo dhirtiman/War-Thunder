@@ -1,0 +1,88 @@
+<!-- 
+Program 7: Write a program to add styles to borders, 
+and cells to a table using CSS. 
+Add a button on the page to hide
+ and show the table 
+-->
+<html>
+  <head>
+    <title>Styled table with Hide/Show Button</title>
+
+    <style>
+      body {
+        font-family: Arial;
+        text-align: center;
+      }
+      table {
+        margin: 20px auto;
+        border-collapse: collapse;
+        width: 60%;
+      }
+      table,
+      th,
+      td {
+        border: 2px solid black;
+      }
+      th {
+        background-color: lightblue;
+        padding: 10px;
+      }
+      td {
+        background-color: lightyellow;
+        padding: 10px;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: green;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      button {
+        padding: 10px 20px;
+        background-color: green;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+    <script>
+      function toggleTable() {
+        let table = document.getElementById("myTable");
+
+        if (table.style.display == "none") {
+          table.style.display = "table";
+        } else {
+          table.style.display = "none";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Student Details</h2>
+    <button onclick="toggleTable()">Hide / Show Table</button>
+    <table id="myTable">
+      <tr>
+        <th>USN</th>
+        <th>Name</th>
+        <th>Course</th>
+      </tr>
+      <tr>
+        <th>101</th>
+        <th>Rahul</th>
+        <th>MCA</th>
+      </tr>
+      <tr>
+        <th>102</th>
+        <th>Ananya</th>
+        <th>BCA</th>
+      </tr>
+      <tr>
+        <th>103</th>
+        <th>Rohit</th>
+        <th>BSC</th>
+      </tr>
+    </table>
+  </body>
+</html>
