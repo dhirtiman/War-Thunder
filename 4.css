@@ -1,0 +1,26 @@
+.navbar {
+    background-color: #004d40;
+    padding: 12px;
+    text-align: center;
+}
+
+.navbar a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.section-card {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 25px auto;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.section-card h2 {
+    color: #00695c;
+}

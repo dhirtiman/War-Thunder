@@ -1,0 +1,194 @@
+<html>
+  <head>
+	<title>Student Course Registration Form </title>
+	<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(15, 25, 20);
+    color: rgb(220, 240, 220);
+  }
+  .container {
+    width: 750px;
+    margin: 20px auto;
+    background-color: rgb(25, 45, 35);
+    padding: 25px;
+    border-radius: 12px;
+  }
+  h1 {
+    text-align: center;
+    color: rgb(120, 220, 120);
+  }
+  h3 {
+    background-color: rgb(35, 65, 45);
+    padding: 8px;
+    border-radius: 5px;
+    color: rgb(240, 180, 180);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  td {
+    padding: 10px;
+    color: rgb(220, 240, 220);
+  }
+  input,select,textarea {
+    width: 100%;
+    padding: 7px;
+    border: 1px solid rgb(80, 80, 80);
+    border-radius: 5px;
+    background-color: rgb(35, 55, 45);
+    color: rgb(220, 240, 220);
+  }
+  input[type="radio"],
+  input[type="checkbox"] {
+    width: auto;
+  }
+  .buttons {
+    text-align: center;
+  }
+  .buttons input {
+    width: 180px;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(0, 80, 0);
+    color: rgb(220, 255, 220);
+    border: none;
+    border-radius: 5px;
+  }
+</style>
+  </head>
+  <body>
+	<div class="container">
+	  <h1>MCA Course Registration Form </h1>
+	  <form>
+		<h3>Student Information</h3>
+		<table>
+		  <tr>
+			<td>Student Name</td>
+			<td><input type="text" placeholder="Enter full name"></td>
+			<td>USN</td>
+			<td><input type="text" placeholder="1KP23MC001"></td>
+		  </tr>
+		  <tr>
+			<td>Email</td>
+			<td><input type="email"></td>
+			<td>Mobile Number</td>
+			<td><input type="tel"></td>
+		  </tr>
+
+		  <tr>
+			<td>Gender</td>
+			<td>
+			  <input type="radio"name="gender">Male
+			  <input type="radio"name="gender">Female
+			</td>
+			<td>Date of Birth</td>
+			<td><input type="date"></td>
+		  </tr>
+		  <tr>
+			<td>Semester</td>
+			<td>
+			  <select>
+				<option>Select Semester</option>
+				<option>I Semester</option>
+				<option>II Semester</option>
+				<option>III Semester</option>
+				<option>IV Semester</option>
+			  </select>
+			</td>
+			<td>Section</td>
+			<td>
+			  <select>
+				<option>A</option>
+				<option>B</option>
+			  </select>
+			</td>
+		  </tr>
+		</table>
+		<h3>Course selection</h3>
+		
+		<table border="1">
+		  <tr style="background-color: #dbe4ff;">
+			<th>Select </th>
+			<th>Course Code</th>
+			<th>Course Name</th>
+			<th> Credits </th>
+		  </tr>
+		
+
+		  <tr>
+			<td align="center"><input type="checkbox"/></td>
+			<td>MCA101</td>
+			<td> Python Programming </td>
+			<td> 4 </td>
+		  </tr>
+
+		  <tr>
+			<td align="center"><input type="checkbox"/></td>
+			<td>MCA102</td>
+			<td> Data Structures </td>
+			<td> 4 </td>
+		  </tr>
+		  <tr>
+			<td align="center"><input type="checkbox"/></td>
+			<td>MCA103</td>
+			<td> Web Technologies </td>
+			<td> 3 </td>
+		  </tr>
+
+
+		  <tr>
+			<td align="center"><input type="checkbox"/></td>
+			<td>MCA104</td>
+			<td> Machine Learning </td>
+			<td> 4 </td>
+		  </tr>
+		  <tr>
+			<td align="center"><input type="checkbox"/></td>
+			<td>MCA105</td>
+			<td> Unix Programming Lab</td>
+			<td> 2 </td>
+		  </tr>
+		</table>
+		<h3>Additional Details</h3>
+		
+		<table>
+		  <tr>
+			<td>Mode of Learning</td>
+			<td>
+			   <input type="radio" name="mode"> Offline
+			   <input type="radio" name="mode"> Online
+			   <input type="radio" name="mode"> Hybrid
+			</td>
+		  </tr>
+
+		  <tr>
+			<td>Skills Interested In</td>
+			<td>
+			   <input type="checkbox"> AI & ML
+			   <input type="checkbox"> Cloud Computing
+			   <input type="checkbox"> Cyber Security
+			   <input type="checkbox"> Full Stack Development
+			</td>
+		  </tr>
+		  <tr>
+			<td>Upload Previous Marks Card</td>
+			<td><input type="file"></td>
+		  </tr>
+		  <tr>
+			<td>Why did you choose these electives?</td>
+			<td>
+			  <textarea rows="5"></textarea>
+			</td>
+		  </tr>
+		</table>
+
+		<div class="buttons">
+			<input type="submit" value="Submit Registraion">
+			<input type="reset" value="Reset Form">
+		</div>
+	</form>
+	</div>
+  </body>
+</html>
