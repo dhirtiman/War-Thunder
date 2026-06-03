@@ -1,0 +1,58 @@
+<!-- 
+Program 11:Write a program to handle images on a web page using JavaScript,
+ including hover effects and click events. 
+-->
+ <html>
+<head> 
+     <title>Image Handling using JavaScript</title>
+
+    <style> 
+         body{ 
+             font-family:Arial;
+             text-align:center;
+	     margin-top: 50px;
+        } 
+
+         img{ 
+       	     border: 3px solid black;
+	     cursor: pointer
+	 } 
+	#message {
+		margin-top: 20px;
+		font-size: 20px;
+		font-weight: bold;
+	}     
+      </style> 
+
+</head>
+
+<body> 
+   <h2> Image Handling using JavaScript </h2>
+
+   <img src="https://picsum.photos/200/300" id="myimg" 
+	onmouseover="zoomIn()"
+	onmouseout="zoomOut()"
+	onclick="showMessage()" style="height: 100px;width: 200px"
+   />
+   <div id="message"></div>
+
+   <script>
+       
+	const myimage = document.getElementById("myimg")
+	function zoomIn() {
+		const myimage = document.getElementById("myimg").style 
+        	myimage.width = "350px";
+        	myimage.height = "250px";
+	} 
+	function zoomOut() { 
+        	const myimage = document.getElementById("myimg").style 
+		myimage.width = "300px";
+        	myimage.height = "200px";
+	} 
+	function showMessage() {
+		document.getElementById("message").innerHTML = "Image Clicked Successfully!";
+	}
+  </script>
+
+</body> 
+</html>

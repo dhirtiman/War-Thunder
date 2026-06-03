@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Registration Form</title>
+
+    <style>
+        h2 {
+            text-align: center;
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            padding-top: 50px;
+        }
+
+        form {
+            width: 300px;
+        }
+
+        span {
+            color: red;
+            font-size: 12px;
+        }
+
+        input {
+            width: 100%;
+            padding: 5px;
+            margin-top: 3px;
+        }
+
+        input[type="submit"] {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Employee Registration Form</h2>
+
+    <div>
+        <form onsubmit="return validateForm();">
+
+            <label>Name:</label><br>
+            <input type="text" id="name"><br>
+            <span id="nameMsg"></span><br>
+
+            <label>Email:</label><br>
+            <input type="text" id="email"><br>
+            <span id="emailMsg"></span><br>
+
+            <label>Phone Number:</label><br>
+            <input type="text" id="phone"><br>
+            <span id="phoneMsg"></span><br>
+
+            <label>Date of Birth:</label><br>
+            <input type="date" id="dob"><br>
+            <span id="dobMsg"></span><br>
+
+            <label>Password:</label><br>
+            <input type="password" id="password"><br>
+            <span id="passMsg"></span><br>
+
+            <label>Confirm Password:</label><br>
+            <input type="password" id="confirm"><br>
+            <span id="confirmMsg"></span><br>
+
+            <input type="submit" value="Register">
+
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+
+            let valid = true;
+
+            let nameMsg = document.getElementById("nameMsg");
+            let emailMsg = document.getElementById("emailMsg");
+            let phoneMsg = document.getElementById("phoneMsg");
+            let dobMsg = document.getElementById("dobMsg");
+            let passMsg = document.getElementById("passMsg");
+            let confirmMsg = document.getElementById("confirmMsg");
+
+            nameMsg.textContent = "";
+            emailMsg.textContent = "";
+            phoneMsg.textContent = "";
+            dobMsg.textContent = "";
+            passMsg.textContent = "";
+            confirmMsg.textContent = "";
+
+            let name = document.getElementById("name").value.trim();
+
+            if (name === "") {
+                nameMsg.textContent = "Name is required";
+                valid = false;
+            }
+
+            let email = document.getElementById("email").value;
+
+            if (
+                email === "" ||
+                !email.includes("@") ||
+                !email.includes(".")
+            ) {
+                emailMsg.textContent = "Enter a valid email";
+                valid = false;
+            }
+
+            let phone = document.getElementById("phone").value;
+
+            if (
+                phone === "" ||
+                isNaN(phone) ||
+                phone.length !== 10
+            ) {
+                phoneMsg.textContent = "Enter a valid 10-digit number";
+                valid = false;
+            }
+
+            let dob = document.getElementById("dob").value;
+
+            if (dob === "") {
+                dobMsg.textContent = "Select date of birth";
+                valid = false;
+            }
+
+            let pass = document.getElementById("password").value;
+
+            if (pass.length < 6) {
+                passMsg.textContent =
+                    "Password must contain at least 6 characters";
+                valid = false;
+            }
+
+            let confirm = document.getElementById("confirm").value;
+
+            if (confirm !== pass) {
+                confirmMsg.textContent =
+                    "Passwords do not match";
+                valid = false;
+            }
+
+            if (valid) {
+                alert("Registration Successful!");
+            }
+
+            return valid;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!-- 
+Program 10: Create a Student Information Form using JavaScript functions
+ to calculate and display the total marks, average, 
+ result (Pass/Fail), and grade of a student based on marks entered in three subjects 
+
+-->
+
+<html>
+<head>
+  <title>Student Information Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 300px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Student Marks Entry</h2>
+
+  <form id="studentForm" onsubmit="return calculateResult()">
+
+    <label>
+      Student Name:
+      <input type="text" id="name" required />
+    </label>
+
+    <label>
+      Subject 1 Marks:
+      <input type="number" id="sb1" min="0" max="100" required />
+    </label>
+
+    <label>
+      Subject 2 Marks:
+      <input type="number" id="sb2" min="0" max="100" required />
+    </label>
+
+    <label>
+      Subject 3 Marks:
+      <input type="number" id="sb3" min="0" max="100" required />
+    </label>
+
+    <button type="submit">Calculate</button>
+
+  </form>
+
+  <div id="output" class="result"></div>
+
+  <script>
+    function calculateResult() {
+
+      const sub1 = Number(document.getElementById("sb1").value);
+      const sub2 = Number(document.getElementById("sb2").value);
+      const sub3 = Number(document.getElementById("sb3").value);
+
+      const name = document.getElementById("name").value.trim();
+
+      const total = sub1 + sub2 + sub3;
+      const average = total / 3;
+
+      let result = "Pass";
+      let grade;
+
+      if (sub1 < 35 || sub2 < 35 || sub3 < 35) {
+        result = "Fail";
+        grade = "F";
+      } else {
+        if (average >= 85)
+          grade = "A";
+        else if (average >= 70)
+          grade = "B";
+        else if (average >= 50)
+          grade = "C";
+        else
+          grade = "D";
+      }
+
+      document.getElementById("output").innerHTML = `
+        Student: <strong>${name}</strong><br>
+        Total Marks: <strong>${total}</strong><br>
+        Average: <strong>${average.toFixed(2)}</strong><br>
+        Result: <strong>${result}</strong><br>
+        Grade: <strong>${grade}</strong>
+      `;
+
+      return false;
+    }
+  </script>
+
+</body>
+</html>
