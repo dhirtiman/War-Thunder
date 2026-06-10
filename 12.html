@@ -3,73 +3,67 @@
  Write a program to implement event handling in JavaScript 
  for mouse and keyboard events using addEventListeners. -->
 
- <html>
-<head> 
-     <title>Mouse and Keyboard Events</title>
+<html>
+  <head>
+    <title>Mouse and Keyboard Events</title>
 
-    <style> 
-         body{ 
-             font-family:Arial,sans-serif;
-             text-align:center;
-	     margin-top: 50px;
-        } 
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
 
-	#box{ 
-          margin:20px auto;
-	  line-height: 120px;
-          width: 250px;
-	  height: 120px;
-	  background-color: lightblue;
-	  cursor: pointer;
-     	} 
-	input {
-	    padding: 8px;
-	    width: 250px;
-	}
-	#output {
-		margin-top: 20px;
-		font-weight: bold;
-		color: blue;
-	}
-  </style> 
+      #box {
+        margin: 20px auto;
+        line-height: 120px;
+        width: 250px;
+        height: 120px;
+        background-color: lightblue;
+        cursor: pointer;
+      }
+      input {
+        padding: 8px;
+        width: 250px;
+      }
+      #output {
+        margin-top: 20px;
+        font-weight: bold;
+        color: blue;
+      }
+    </style>
+  </head>
 
-</head>
+  <body>
+    <h2>Mouse and Keyboard Event Handling</h2>
+    <div id="box">Move Mouse Here</div>
+    <input type="text" id="txt" placeholder="Type something" />
 
-<body> 
-   
-   <h2>Mouse and Keyboard Event Handling</h2>
-   <div id="box">
-	Move Mouse Here
-   </div>
-   <input type="text" id="txt" placeholder="Type something">
+    <p id="output">Event messages will appear here.</p>
 
-   <p id="output">Event messages will appear here. </p>
+    <script>
+      let box = document.getElementById("box");
+      let txt = document.getElementById("txt");
+      let output = document.getElementById("output");
 
-   <script>
-	let box = document.getElementById("box");
-	let txt = document.getElementById("txt");
-	let output = document.getElementById("output");
+      box.addEventListener("mouseover", () => {
+        box.style.backgroundColor = "yellow";
+        output.innerHTML = "Mouse over event triggered";
+      });
+      box.addEventListener("mouseout", () => {
+        box.style.backgroundColor = "lightblue";
+        output.innerHTML = "Mouse out event triggered";
+      });
+      txt.addEventListener("keydown", (event) => {
+        output.innerHTML = "KeyDown: " + event.key;
+      });
+      txt.addEventListener("keyup", (event) => {
+        output.innerHTML = "KeyUp: " + event.key;
+      });
 
-	box.addEventListener("mouseover" , ()=> {
-		box.style.backgroundColor = "yellow";
-		output.innerHTML = "Mouse over event triggered";
-	});
-	box.addEventListener("mouseout" , ()=> {
-		box.style.backgroundColor = "lightblue";
-		output.innerHTML = "Mouse out event triggered";
-	});
-	txt.addEventListener("keydown" , (event)=> {
-		output.innerHTML = "KeyDown: "+event.key;
-	});
-	txt.addEventListener("keyup" , (event)=> {
-		output.innerHTML = "KeyUp: "+event.key;
-	});
-
-	box.addEventListener("click", ()=> {
-		output.innerHTML = "Mouse click event triggered";
-	});
-  </script>
-
-   
-</body> 
+      box.addEventListener("click", () => {
+        output.innerHTML = "Mouse click event triggered";
+      });
+    </script>
+  </body>
 </html>
