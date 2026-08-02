@@ -1,0 +1,195 @@
+<html>
+  <head>
+    <title>Personal Portfolio</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f7fb;
+        margin: 0;
+        padding: 20px;
+      }
+
+      .container {
+        width: 80%;
+        margin: auto;
+      }
+
+      section {
+        background-color: white;
+        padding: 20px;
+        margin-top: 20px;
+        border-radius: 10px;
+        border-left: 5px solid #2563eb;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        color: #2563eb;
+      }
+
+      h2 {
+        color: #1e40af;
+      }
+
+      img {
+        display: block;
+        margin: auto;
+        border-radius: 50%;
+        border: 3px solid #2563eb;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+
+      th {
+        background-color: #2563eb;
+        color: white;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        text-align: center;
+      }
+
+      label {
+        display: block;
+        margin-top: 10px;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        box-sizing: border-box;
+      }
+
+      button {
+        margin-top: 15px;
+        background-color: #2563eb;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+      }
+
+      button:hover {
+        background-color: #1d4ed8;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Dhirtiman Khati</h1>
+
+      <section>
+        <img src="ppfp.jpg" alt="Profile Photo" width="150" height="150" />
+
+        <h2>Personal Information</h2>
+        <p><strong>Name:</strong> Dhirtiman Khati</p>
+        <p><strong>Course:</strong> Master of Computer Applications (MCA)</p>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+
+        <ul>
+          <li>MCA - Krupanidhi College of Management, Bengaluru</li>
+          <li>B.Sc. Computer Science - Assam University ,Sichar</li>
+          <li>
+            Higher Secondary - Government Higher Secondary School, Jairampur
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Skills</h2>
+
+        <ul>
+          <li>HTML5 & CSS3</li>
+          <li>JavaScript</li>
+          <li>Python</li>
+          <li>React.js</li>
+          <li>Node.js</li>
+          <li>SQL</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Semester-wise Marks</h2>
+
+        <table>
+          <tr>
+            <th>Semester</th>
+            <th>Percentage</th>
+          </tr>
+
+          <tr>
+            <td>Semester 1</td>
+            <td>
+                65.4%
+            </td>
+          </tr>
+
+          <tr>
+            <td>Semester 2</td>
+            <td>68.8%</td>
+          </tr>
+
+          <tr>
+            <td>Semester 3</td>
+            <td>68.6%</td>
+          </tr>
+
+          <tr>
+            <td>Semester 4</td>
+            <td>66.4%</td>
+          </tr>
+
+          <tr>
+            <td>Semester 5</td>
+            <td>75.2%</td>
+          </tr>
+
+          <tr>
+            <td>Semester 6</td>
+            <td>73.2%</td>
+          </tr>
+        </table>
+      </section>
+
+      <section>
+        <h2>Contact Form</h2>
+
+        <form>
+          <label>Name</label>
+          <input type="text" placeholder="Enter your name" />
+
+          <label>Email</label>
+          <input type="email" placeholder="Enter your email" />
+
+          <label>Subject</label>
+          <input type="text" placeholder="Enter subject" />
+
+          <label>Message</label>
+          <textarea rows="5" placeholder="Enter your message"></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+    </div>
+  </body>
+</html>
