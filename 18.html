@@ -1,58 +1,50 @@
 <html>
-<head>
-  <title>Student Card</title>
-  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-</head>
-<body>
-  <div id="root"></div>
-  <script type="text/babel">
-  
-  function Student(props){
-  	return(
-		<div style={{
-                   border:"2px solid black",
-                   padding:"10px",
-		   margin:"10px",
-		   width:"250px"}}>
-                 <h2>{props.name}</h2>
-                 <p><b>USN:</b>{props.usn}</p>
-		 <p><b>Course:</b>{props.course}</p>
-		 <p><b>Semester:</b>{props.sem}</p>
-	        </div>
-	);
-   }
-   function App(){
-	return(
-		<div>
-			<Student 
+  <head>
+    <title>Student Card</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      function Student(props) {
+        return (
+          <div
+            style={{
+              border: "2px solid black",
+              padding: "10px",
+              margin: "10px",
+              width: "250px",
+            }}
+          >
+            <h2>{props.name}</h2>
+            <p>
+              <b>USN:</b>
+              {props.usn}
+            </p>
+            <p>
+              <b>Course:</b>
+              {props.course}
+            </p>
+            <p>
+              <b>Semester:</b>
+              {props.sem}
+            </p>
+          </div>
+        );
+      }
+      function App() {
+        return (
+          <div>
+            <Student name="ALex" usn="MCA001" course="MCA" sem="II" />
+            <Student name="Anjali" usn="MCA002" course="MCA" sem="II" />
+            <Student name="Kiran" usn="MCA003" course="MCA" sem="II" />
+          </div>
+        );
+      }
 
-				name="ALex"
-				usn="MCA001"
-				course="MCA"
-				sem="II"
-			/>
-			<Student 
-
-				name="Anjali"
-				usn="MCA002"
-				course="MCA"
-				sem="II"
-			/>
-			<Student 
-
-				name="Kiran"
-				usn="MCA003"
-				course="MCA"
-				sem="II"
-			/>
-		</div>
-	);
-	}
-
-	ReactDOM.render(<App/>,document.getElementById("root"));
-
-</script>
-</body>
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
 </html>

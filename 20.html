@@ -1,0 +1,80 @@
+<!--
+Write a react application to validate a student registration form by checking that the 
+Name , Age and email fields are not empty before submission.
+Display appropriate error messages for invalid inputs and a success message when the form is submitted
+-->
+
+<html>
+  <head>
+    <title>Student Registration2</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      function App() {
+        const [name, setName] = React.useState("");
+        const [age, setAge] = React.useState("");
+        const [email, setEmail] = React.useState("");
+        const [error, setError] = React.useState("");
+        const [message, setMessage] = React.useState("");
+
+        const handleSubmit = (e) => {
+          e.preventDefault();
+
+          if (name == "") {
+            setError("Name is required.");
+            setMessage("");
+          } else if (age == "") {
+            setError("Age is required.");
+            setMessage("");
+          } else if (email == "") {
+            setError("Email is required.");
+            setMessage("");
+          } else {
+            setError("");
+            setMessage("Form submitted successfully.");
+          }
+        };
+
+        return (
+          <div>
+            <h2>Student Registration Form </h2>
+            <form onSubmit={handleSubmit}>
+              <label>Name: </label>
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+              <br />
+              <label>Age: </label>
+              <input
+                type="number"
+                value={age}
+                onChange={(e) => setAge(e.target.value)}
+              />
+              <br />
+              <label>Email: </label>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <br />
+              <input type="submit" value="Submit" />
+            </form>
+            <br />
+            <br />
+            <h3 style={{ color: "red" }}>{error}</h3>
+            <h3 style={{ color: "green" }}>{message}</h3>
+          </div>
+        );
+      }
+
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
