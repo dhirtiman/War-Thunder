@@ -1,0 +1,76 @@
+<!-- Create an AngularJS app where users can input two numbers and select an operation to perform
+ The result shoul be displayed dynamically  -->
+
+<html ng-app="calculatorApp">
+  <head>
+    <title>AngularJS Calculator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+      body {
+        font-family: Arial;
+        margin: 40px;
+      }
+      .calculator {
+        max-width: 300px;
+        padding: 20px;
+        background-color: #f2f2f2;
+        border-radius: 10px;
+      }
+      input,
+      select {
+        width: 100%;
+        padding: 8px;
+        margin: 5px;
+      }
+      .result {
+        margin-top: 15px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body ng-controller="calcController">
+    <div class="calculator">
+      <h2>Simple calculator</h2>
+      <label>Number 1: </label>
+      <input type="number" ng-model="num1" />
+      <label>Number 2: </label>
+      <input type="number" ng-model="num2" />
+      <label>Operation: </label>
+      <select ng-model="operation">
+        <option value="+">Addition (+)</option>
+        <option value="-">Subtraction (-)</option>
+        <option value="*">Multiplication (x)</option>
+        <option value="/">Division (/)</option>
+      </select>
+      <div class="result">Result: {{calculateResult()}}</div>
+    </div>
+  </body>
+  <script>
+    var app = angular.module("calculatorApp", []);
+    app.controller("calcController", ($scope) => {
+      $scope.num1 = 0;
+      $scope.num2 = 0;
+      $scope.operation = "+";
+      $scope.calculateResult = () => {
+        var n1 = parseFloat($scope.num1);
+        var n2 = parseFloat($scope.num2);
+        switch ($scope.operation) {
+          case "+":
+            return n1 + n2;
+
+          case "-":
+            return n1 - n2;
+
+          case "*":
+            return n1 * n2;
+
+          case "/":
+            return n2 !== 0 ? n1 / n2 : "Error: Divide by 0";
+
+          default:
+            return 0;
+        }
+      };
+    });
+  </script>
+</html>

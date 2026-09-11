@@ -1,0 +1,26 @@
+<html ng-app>
+    <head>
+        <title>Loan Interest Calculator</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    </head>
+    <body>
+        <h2>Loan Interest Calculator</h2>
+        Loan Amount: 
+        <input type="number" ng-model="amount"/>
+        <br/>
+        Interest Rate:
+        <input type="number" ng-model="rate"/>
+        <br/>
+        Tenure:(years)
+        <input type="number" ng-model="year"/>
+        <br>
+        <h3>Loan details</h3>
+        Loan Amount: {{amount}} rupees <br>
+        Interest rate: {{rate}}% <br>
+        Loan Tenure: {{year}}years <br>
+        Interest: {{(amount*rate*year)/100}}  <br>
+
+
+    </body>
+</html>
