@@ -1,0 +1,24 @@
+<!-- Q16 Write a React.js program to create multiple components (Header,Content,Footer) and display them using JSX, passing 
+ Data using props  -->
+<html>
+  <head>
+    <title>React component example</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      function Header(props) {
+        return <h1>{props.title}</h1>;
+      }
+      function Footer(props) {
+        return <h3> {props.footer} </h3>;
+        function Content(props) {
+          return <p>{props.message} </p>;
+        }
+      }
+    </script>
+  </body>
+</html>

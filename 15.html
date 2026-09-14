@@ -1,0 +1,51 @@
+<!-- Q15 Create an AngularJS appthat displays a dropdown list of countries when a country is selected , another dropdown list of cities
+ specific to the selected country is populated  -->
+
+<html ng-app="countryApp">
+  <head>
+    <title>AngularJS Calculator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  </head>
+  <body ng-controller="myController">
+    <h2>Country -city drop dropdown</h2>
+    <select ng-model="country" ng-change="showCities()">
+      <option>India</option>
+      <option>USA</option>
+      <option>UK</option>
+    </select>
+    <br />
+    City:
+    <select ng-model="city">
+      <option ng-repeat="c in cities">{{c}}</option>
+    </select>
+    <br />
+    <p>Selected Country: {{country}}</p>
+    <p>Selected City: {{city}}</p>
+  </body>
+  <script>
+
+    var app = angular.module("countryApp", []);
+    app.controller("myController", ($scope) => {
+      $scope.cities = [];
+      $scope.country = "India";
+      $scope.showCities = () => {
+        switch ($scope.country) {
+          case "India":
+            $scope.cities = ["Delhi", "Mumbai", "Bangalore"];
+            $scope.cities = ["Delhi", "Mumbai", "Bangalore"];
+            break;
+
+          case "USA":
+            $scope.cities = ["California", "New York", "Chicago"];
+            break;
+          case "UK":
+            $scope.cities = ["London", "Manchester", "Liverpool"];
+            break;
+          default:
+            $scope.cities = [];
+            break;
+        }
+      };
+    });
+  </script>
+</html>
